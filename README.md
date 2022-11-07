@@ -19,4 +19,5 @@ destination, then this message is destroyed and a message is sent to the message
 for that we use functions: canberesend ,resendemail , and desroy.
 
 # UserAcount
-A user is identified by his Name ,ID, emailadress and time zone a user has inbox and sent which are two stacks of emails 
+A user is identified by his Name ,ID, emailadress and time zone a user has inbox and sent which are two stacks of emails where he can always check the latest emails he recieved or sent.
+the user sends an email to another user through the server for that we use function sendmail
