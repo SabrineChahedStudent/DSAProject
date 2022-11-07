@@ -53,7 +53,7 @@ public:
         return m_UserID;
     }
 
-   void sendMailToServer( MailServer mailserver,Email mail ){ mailserver.EnterEmail(mail); }
+   void sendMailToServer( MailServer mailserver,Email mail ){ mailserver.EmailsToSend(mail); }
 
 
 private:
