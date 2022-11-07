@@ -2,6 +2,7 @@
 #include <queue>
 #include<iostream>
 #include<list>
+#include<stack>
 #include"email.h"
 
 class MailServer;  //forward declaration 
@@ -52,15 +53,15 @@ public:
         return m_UserID;
     }
 
-   void sendMailToServer( UserAccount Sender ){ EmailsToSend.push( Sender.SentMails.top()); }
+   void sendMailToServer( MailServer mailserver,Email mail ){ mailserver.EnterEmail(mail); }
 
 
 private:
 
     char* m_UserName;
     long m_UserID;
-    queue <Email> MailBox;
-    queue <Email> SentMails;
+    stack <Email> MailBox;
+    stack <Email> SentMails;
     // string TimeZone;   // this additional data to improve sending email phase.
     
     // Some Utility Functions to enter data //
@@ -71,17 +72,17 @@ private:
         
      }
 
-      void enterUserID ( string UserID )
+      void enterUserID (MailServermailserver, string UserID )
     {   do{
          cout<<"enter a valid UserID "<<endl;
           cin>> m_UserID;
         
          }while(IDisTaken(UserID);
                 
-          validID.push( m_UserID);
+          mailserver.validID.push( m_UserID);
           
      }
-      bool IDisTaken(int UserID){
+      bool IDisTaken(MailServer mailserver ,int UserID){
   
-      return validID.contains(UserID);
+      return mailserver.validID.contains(UserID);
     };
