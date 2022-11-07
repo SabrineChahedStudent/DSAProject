@@ -1,6 +1,8 @@
 
 #include <queue>
 #include<iostream>
+#include<list>
+#include"email.h"
 
 class <EmailObj> MailServer;  //forward declaration 
 
@@ -58,9 +60,8 @@ private:
 
     char* m_UserName;
     long m_UserID;
-    EmailObj m_Email;
-    queue <EmailObj> MailBox;
-    queue <EmailObj> SentMails;
+    queue <Email> MailBox;
+    queue <Email> SentMails;
     // string TimeZone;   // this additional data to improve sending email phase.
     
     // Some Utility Functions to enter data //
@@ -75,10 +76,13 @@ private:
     {   do{
          cout<<"enter a valid UserID "<<endl;
           cin>> m_UserID;
+        
          }while(IDisTaken(UserID);
+                
+          validID.push( m_UserID);
           
      }
-     bool IDisTaken(int UserID){
+      bool IDisTaken(int UserID){
   
-   
+      return validID.contains(UserID);
     };
