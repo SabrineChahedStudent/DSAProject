@@ -11,6 +11,7 @@ Mailserver is a queus of emails, it recieves emails fom inlimited number of user
 The processing consist of:
 sending the email to destination and knowing immediatly if the emailhas eached or not: 
 for that we use three functions function sendmailtodestination,checkifreachdestination and mailcopy.
+//send will take the email keep copy then push it to reciever imbox and push it to sender sent.
 
 Emails that have not reached destination will be resend under conditions :
 A message is resent only if there are no new messages to be sent
@@ -20,4 +21,5 @@ for that we use functions: canberesend ,resendemail , and desroy.
 
 # UserAcount
 A user is identified by his Name ,ID, emailadress and time zone a user has inbox and sent which are two stacks of emails where he can always check the latest emails he recieved or sent.
-the user sends an email to another user through the server for that we use function sendmail
+the user sends an email to another user through the server for that we use function sendmailtserver the server wen recieve the email will know the sender and reciever and then will send the email as explained in the mail server class up.
+
