@@ -10,6 +10,7 @@ public:
     void sendMailToDestination(  UserAccount User1, UserAccount User2 );
     bool checkReachDestination();
     bool MailCopy();
+    void ResendEmail();
 
 
 
