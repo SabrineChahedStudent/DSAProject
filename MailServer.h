@@ -12,6 +12,8 @@ public:
     bool checkReachDestination();
     bool MailCopy();
     void ResendEmail();
+    void CanBeResent(Email email);
+    void Destry(Email email);
 
 
 
