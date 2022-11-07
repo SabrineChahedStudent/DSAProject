@@ -1,5 +1,6 @@
 #include <queue>
-
+#include<list>
+#include"Email.h"
 template <class EmailObj>
 class MailServer
 {
@@ -15,7 +16,8 @@ public:
 
 
 private:
-    queue< EmailObj> EmailsToSend;
+    queue<Email> EmailsToSend;
+    list<long> validID;
 
 
 };
