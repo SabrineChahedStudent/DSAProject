@@ -4,7 +4,7 @@
 #include<list>
 #include"email.h"
 
-class <EmailObj> MailServer;  //forward declaration 
+class MailServer;  //forward declaration 
 
 using std::string;
 
@@ -20,7 +20,6 @@ using std::string;
 // RECEIVE emails
 // SEND emails
 
-template < class EmailObj >
 class UserAccount
 {
 
@@ -53,7 +52,7 @@ public:
         return m_UserID;
     }
 
-   void sendMailToServer( UserAccount Sender ){ EmailsToSend.push( Sender.m_Email); }
+   void sendMailToServer( UserAccount Sender ){ EmailsToSend.push( Sender.SentMails.top()); }
 
 
 private:
