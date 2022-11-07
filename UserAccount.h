@@ -1,5 +1,6 @@
 
 #include <queue>
+#include<iostream>
 
 class <EmailObj> MailServer;  //forward declaration 
 
@@ -21,15 +22,16 @@ template < class EmailObj >
 class UserAccount
 {
 
-    friend class MailServer ;
-    bool checkIfMailArivedAtDestination  ( UserAccount User1, UserAccount User2) const{ return User2.MailBox.contains(User1.m_Email)};
+    friend class MailServer ; 
 public:
-    UserAccount(string UserName, string UserID ): m_UserName(nullptr), m_UserID(nullptr)
+  UserAccount(string UserName, string UserID ): m_UserName(nullptr), m_UserID(nullptr)
         {
         m_Username=enterUserName( UserName);
         m_UserID  = enterUserID( UserID );
          }
-
+    
+ bool checkIfMailArivedAtDestination  ( UserAccount User1, UserAccount User2) const
+    { return User2.MailBox.contains(User1.m_Email)};
         
     ~UserAccount()
     {
@@ -37,27 +39,29 @@ public:
         delete [] m_UserID;
     }
     
-    m_UserName=0;
+    m_UserName="NoName";
     m_UserID=0;
-    void getUserName() const
+    
+    char* getUserName() const
     {
         return m_UserName;
     }
-    void getUserName() const
+    int getUserID() const
     {
-        return m_UserName;
+        return m_UserID;
     }
 
-    void sendMailToServer( UserAccount Sender ){ EmailsToSend.push( Sender.m_Email); }
+   void sendMailToServer( UserAccount Sender ){ EmailsToSend.push( Sender.m_Email); }
 
 
 private:
 
     char* m_UserName;
-    char* m_UserID;
+    long m_UserID;
     EmailObj m_Email;
     queue <EmailObj> MailBox;
     queue <EmailObj> SentMails;
+    // string TimeZone;   // this additional data to improve sending email phase.
     
     // Some Utility Functions to enter data //
     void enterUserName ( string UserName )
@@ -67,12 +71,14 @@ private:
         
      }
 
-      void enterUserName ( string UserID )
-    { 
-         for(int i=0; i<UserName.length(); i++)
-         cin>>m_UserID [i];
+      void enterUserID ( string UserID )
+    {   do{
+         cout<<"enter a valid UserID "<<endl;
+          cin>> m_UserID;
+         }while(IDisTaken(UserID);
           
      }
-   // string TimeZone;   // this additional data to improve sending email phase.
-
-};
+     bool IDisTaken(int UserID){
+  
+   
+    };
