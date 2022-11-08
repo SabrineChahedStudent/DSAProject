@@ -8,13 +8,19 @@ public:
     ~MailServer();
     void processReceivedMails();
     void sendMailToDestination(  UserAccount User1, UserAccount User2 );
+    void keepEmailCopy (); 
     bool checkReachDestination();
     bool MailCopy();
+    bool resendEmail();
+    int timesEmailIsSent ();
+    void destroyEmail();
+    void notifySenderOfAnError();
+    
 
 
 
 private:
-    queue< EmailObj> EmailsToSend;
+    queue<Email> EmailsToSend;
 
 
 };
