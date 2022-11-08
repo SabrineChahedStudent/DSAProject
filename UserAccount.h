@@ -55,8 +55,8 @@ private:
 
     char* m_UserName;
     char* m_UserID;
-    EmailObj m_Email;
-    queue <EmailObj> MailBox;
+    Email m_Email;
+    Stack <EmailObj> MailBox;
     queue <EmailObj> SentMails;
     
     // Some Utility Functions to enter data //
