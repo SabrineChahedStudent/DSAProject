@@ -1,9 +1,13 @@
 #include <queue>
+#include "email.hpp"
+#include "UserAccount.hpp"
 
 template <class EmailObj>
 class MailServer
 {
 public:
+    friend class email;
+    friend class UserAccount< Obj>;
     MailServer();
     ~MailServer();
     void processReceivedMails();
@@ -15,6 +19,7 @@ public:
     int timesEmailIsSent ();
     void destroyEmail();
     void notifySenderOfAnError();
+    
     
 
 
